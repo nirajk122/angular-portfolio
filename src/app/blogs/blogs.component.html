@@ -1,0 +1,19 @@
+<p>blogs works!</p>
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="server">Server</label>
+            <select formControlName="website" class="form-control">
+                <option disabled>Select Server</option>
+                <option>Choose Server</option>
+                <option *ngFor="let server of serverList">{{ server }}</option>
+            </select>
+            <div *ngIf="f.server.touched && f.server.invalid" class="alert-alert-danger">
+               <!--- <div *ngIf="f.server.errors.required">Name is required</div>-->
+            </div>
+        </div>
+    
+        <p-button label="Submit"></p-button>
+        <!-- <button class="btn btn-primary" type="submit" [disabled]="form.valid">Submit</button> -->
+    </form>
+    </div>
